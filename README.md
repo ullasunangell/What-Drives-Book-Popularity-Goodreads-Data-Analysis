@@ -9,6 +9,7 @@ The goal of this project is to demonstrate data analysis skills while exploring 
 ## Dataset
 
 Source: Goodreads Books Dataset
+https://www.kaggle.com/datasets/ayushiiisahu/goodreads-books-dataset
 
 The dataset contains information about 700+ books including:
 
