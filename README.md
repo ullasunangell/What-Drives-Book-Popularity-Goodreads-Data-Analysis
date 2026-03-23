@@ -1,5 +1,7 @@
 # Book Trope Analysis
 
+Tableau: https://public.tableau.com/app/profile/ulla.angell/viz/Book_Trope_Analysis/WhatDrivesBookPopularityGoodreadsAnalysis
+
 ## Overview
 
 This project analyses Goodreads book data to explore how narrative themes and book characteristics relate to reader engagement and ratings. The analysis focuses on cleaning the dataset, removing multi-book collection entries, validating page-count quality, and using keyword-based theme detection to examine patterns in reader response.
