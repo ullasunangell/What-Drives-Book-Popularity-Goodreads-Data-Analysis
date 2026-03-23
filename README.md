@@ -1,91 +1,109 @@
-# Book Trope Analysis
+# 📊 What Drives Book Popularity? — Goodreads Analysis
 
-Tableau: https://public.tableau.com/app/profile/ulla.angell/viz/Book_Trope_Analysis/WhatDrivesBookPopularityGoodreadsAnalysis
+## 🔍 Overview
 
-## Overview
+This project explores the relationship between **book length, reader ratings, and thematic elements** using a curated Goodreads dataset.
 
-This project analyses Goodreads book data to explore how narrative themes and book characteristics relate to reader engagement and ratings. The analysis focuses on cleaning the dataset, removing multi-book collection entries, validating page-count quality, and using keyword-based theme detection to examine patterns in reader response.
+The goal was to identify patterns in:
 
-The project was built in Python using pandas, matplotlib, and seaborn, with analysis conducted in Jupyter Notebook.
+* Page count distribution
+* Rating behaviour
+* Popularity concentration
+* Theme frequency and impact on ratings
 
-## Objectives
+The analysis combines **Python (data processing & EDA)** with **Tableau (interactive visualisation)**.
 
-- Clean and prepare Goodreads book data for analysis
-- Remove collection-style and non-standard records that distort page-count analysis
-- Explore summary statistics for page count, ratings, and reader engagement
-- Examine the relationship between book length and average rating
-- Identify the most popular books based on reader ratings count
-- Detect broad narrative themes from book descriptions using keyword matching
-- Compare theme frequency and average ratings across detected themes
+---
 
-## Dataset
-https://www.kaggle.com/datasets/ayushiiisahu/goodreads-books-dataset
-The project uses a Goodreads books dataset sourced from Kaggle. Relevant fields retained for analysis include:
+## 🛠️ Tech Stack
 
-- title
-- description
-- pages
-- publicationDate
-- language
-- rating
-- ratings
-- genres
+* Python (Pandas, NumPy, Matplotlib)
+* Jupyter Notebook
+* Tableau Public
+* Git & GitHub
 
-Only columns relevant to the analysis were retained, and records with invalid or non-standard page counts were removed during preprocessing.
+---
 
-## Data Cleaning
+## 📁 Project Structure
 
-Several preprocessing steps were applied to improve data quality:
+```
+book-trope-analysis/
+│
+├── data/                      # Cleaned dataset
+├── notebook/
+│   └── book_tropes_analysis.ipynb
+├── README.md
+```
 
-- Retained only columns relevant to analysis
-- Removed books with page counts below 50
-- Filtered likely multi-book collections and bundle entries using title-based keyword rules
-- Removed slash-separated compilation titles
-- Manually excluded a small number of remaining collection-style entries after validation
-- Reviewed page-count outliers to confirm that the remaining records were plausible standalone books
+---
 
-After cleaning, the working dataset contained 547 books.
+## 📊 Key Insights
 
-## Analysis
+### 1. Page Count Distribution
 
-### 1. Summary Statistics
-Descriptive statistics were calculated for page count, average rating, and ratings count to understand the distribution of core variables.
+Most books cluster between **300–400 pages**, with a long tail of significantly longer books.
 
-### 2. Correlation Analysis
-The relationship between page count and average rating was tested using Pearson correlation.
+### 2. Ratings Distribution
 
-### 3. Popularity Analysis
-Books were ranked by total ratings count to identify the most widely read and engaged-with titles in the dataset.
+Ratings are tightly concentrated between **3.5–4.2**, suggesting limited variance in perceived quality.
 
-### 4. Theme Detection
-Keyword-based theme detection was applied to book descriptions using five broad narrative signals:
-- magic
-- romance
-- murder
-- war
-- academy
+### 3. Page Count vs Rating
 
-### 5. Theme Presence vs Reader Ratings
-Average ratings were compared between books with and without each detected theme.
+There is a **weak positive correlation** between book length and rating — longer books are not significantly better rated.
 
-### 6. Theme Frequency
-Detected theme counts were summarised to identify which narrative signals appeared most often across the dataset.
+### 4. Theme Frequency
 
-## Key Findings
+**Romance dominates** the dataset, appearing far more frequently than other themes.
 
-- After cleaning, page-count outliers were substantially reduced, improving dataset reliability
-- The average book length was approximately 335 pages
-- Ratings were relatively tightly clustered, with an average rating of 3.87
-- Reader engagement was highly skewed, with a small number of books receiving millions of ratings
-- Page count had only a weak positive correlation with average rating (0.23)
-- Romance was the most frequently detected theme in book descriptions
-- Books tagged with war, academy, and magic showed slightly higher average ratings, while murder-tagged books showed slightly lower average ratings
-- Theme detection worked as an exploratory proxy rather than a precise classification method
+### 5. Popularity Concentration
 
-## Tools Used
+A small number of titles account for a **disproportionate share of total ratings**, indicating strong popularity concentration.
 
-- Python
-- pandas
-- Jupyter Notebook
-- matplotlib
-- seaborn
+### 6. Theme vs Rating
+
+Theme presence has **minimal impact on average rating**, with only slight variations across categories.
+
+---
+
+## 📈 Tableau Dashboard
+
+👉 [View Interactive Dashboard](https://public.tableau.com/app/profile/ulla.angell/viz/Book_Trope_Analysis/WhatDrivesBookPopularityGoodreadsAnalysis?publish=yes)
+
+---
+
+## 📓 Notebook
+
+👉 [View Jupyter Notebook](https://github.com/ullasunangell/book-trope-analysis/blob/main/notebook/book_tropes_analysis.ipynb)
+
+---
+
+## ⚙️ Methodology
+
+* Data cleaned and structured using Pandas
+* Feature engineering for theme detection (keyword-based)
+* Exploratory data analysis using Matplotlib
+* Dashboard built in Tableau for visual storytelling
+
+---
+
+## 🚀 Key Takeaways
+
+* Book popularity is driven more by **visibility and engagement** than content length
+* Ratings are **highly standardised**, limiting differentiation
+* Themes influence exposure more than quality perception
+
+---
+
+## 📌 Future Improvements
+
+* Use NLP for more accurate theme extraction
+* Include genre-level segmentation
+* Add time-based analysis (publication trends)
+* Incorporate additional engagement metrics (reviews, shelves)
+
+---
+
+## 👤 Author
+
+Ulla Angell
+Data Analyst | Python | SQL | Tableau
